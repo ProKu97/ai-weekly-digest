@@ -23,11 +23,3 @@ jobs:
         env:
           SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
         run: python main.py
-
-      - name: Upload digest log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: digest-log-${{ github.run_number }}
-          path: digest.log
-          retention-days: 30
